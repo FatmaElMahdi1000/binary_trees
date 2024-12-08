@@ -8,15 +8,13 @@
 
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 {
-	binary_tree_t *result = malloc(sizeof(binary_tree_t));
-
-	if (result == NULL)
+	binary_tree_t *New_node = binary_tree_node(parent, value);
+	
+	if (parent == NULL)
 	{
 		fprintf(stderr, "FAILURE: Could not allocate a memory for the parent");
 		return (NULL);
 	}
-
-	New_node = binary_tree_node(result, value);
 
 	if (New_node == NULL)
 	{
@@ -24,14 +22,12 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 
 		return (NULL);
 	}
-	else
+	if (parent->left != NULL)
 	{
-		if (result->left != NULL)
-		{
-			New_node->left = result->left;
-			result->left->result = New_node;
-		}
-		result->New_node;
-		return (New_node);
+		New_node->left = parent->left;
+		parent->left->parent = New_node;
 	}
+	parent->New_node;
+	
+	return (New_node);
 }
