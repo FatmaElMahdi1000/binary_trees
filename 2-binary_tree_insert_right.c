@@ -12,11 +12,10 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 
 	if (parent == NULL)
 	{
-		fprintf(stderr, "FAILURE");
 		return (NULL);
 	}
 
-	new_node = binary_tree_insert_right(parent, value);
+	new_node = binary_tree_node(parent, value);
 
 	if (new_node == NULL)
 	{
