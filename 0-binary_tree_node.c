@@ -1,4 +1,4 @@
-#include "binary.h"
+#include "binary_trees.h"
 /**
  *binary_tree_node - creation binary node
  *@parent: the root node
